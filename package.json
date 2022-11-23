@@ -1,0 +1,14 @@
+{
+  "name": "webpack-template",
+  "scripts": {
+    "build": "webpack",
+    "serve": "webpack serve",
+    "copy-go-bindings": "cp \"$(go1.19.3 env GOROOT)/misc/wasm/wasm_exec.js\" src/public",
+    "build-wasm": "cd wormhole-william && GOOS=js GOARCH=wasm go1.19.3 build -buildvcs=false -o ../src/public/wormhole.wasm ./wasm/module"
+  },
+  "devDependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0",
+    "webpack-dev-server": "^4.11.1"
+  }
+}
